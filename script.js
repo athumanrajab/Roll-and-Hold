@@ -11,11 +11,46 @@ const currentScore0Element = document.querySelector("#current--0"); //INFO: The 
 const currentScore1Element = document.querySelector("#current--1"); //INFO: The current score of player 2
 const player0Element = document.querySelector(".player--0");
 const player1Element = document.querySelector(".player--1");
+const howToPlayDialog = document.querySelector("#how-to-play");
+const btnHelp = document.querySelector(".btn--help");
+const btnStartPlaying = document.querySelector(".how-to-play__start");
+const introSeenStorageKey = "roll-and-hold-intro-seen";
+
+const hasSeenIntro = function () {
+  try {
+    return localStorage.getItem(introSeenStorageKey) === "true";
+  } catch (error) {
+    console.error("Unable to read the intro preference from local storage.", error);
+    return false;
+  }
+};
+
+const rememberIntroSeen = function () {
+  try {
+    localStorage.setItem(introSeenStorageKey, "true");
+  } catch (error) {
+    console.error("Unable to save the intro preference to local storage.", error);
+  }
+};
+
+btnHelp.addEventListener("click", function () {
+  howToPlayDialog.showModal();
+});
+
+btnStartPlaying.addEventListener("click", function () {
+  howToPlayDialog.close();
+});
+
+howToPlayDialog.addEventListener("close", rememberIntroSeen);
 
 // Starting conditions
 score0Element.textContent = 0;
 score1Element.textContent = 0;
 diceElement.classList.add("hidden");
+
+if (!hasSeenIntro()) {
+  howToPlayDialog.showModal();
+}
 
 let scores = [0, 0]; //NOTE: This array will hold the scores of both players, where by the score of the first player will be hold at an index 0, while the score of the second player will be hold at an index 1, initially the score of both players are 0
 let currentScore = 0;

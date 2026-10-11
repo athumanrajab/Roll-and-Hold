@@ -142,6 +142,13 @@ main {
   top: 46.1rem;
 }
 
+.btn--help {
+  top: 1rem;
+  right: 1rem;
+  left: auto;
+  transform: none;
+}
+
 .btn:active {
   transform: translate(-50%, 3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
@@ -170,6 +177,96 @@ main {
 }
 .hidden {
   display: none;
+}
+
+.how-to-play {
+  width: min(54rem, calc(100vw - 3.2rem));
+  max-height: min(90svh, 68rem);
+  margin: auto;
+  padding: 0;
+  overflow-y: auto;
+  border: 0;
+  border-radius: 1.8rem;
+  color: #333;
+  background: #fffafc;
+  box-shadow: 0 2rem 6rem rgba(24, 10, 28, 0.35);
+}
+
+.how-to-play::backdrop {
+  background: rgba(28, 12, 32, 0.68);
+  backdrop-filter: blur(5px);
+}
+
+.how-to-play__content {
+  padding: clamp(2.4rem, 6vw, 4.8rem);
+}
+
+.how-to-play__eyebrow {
+  margin-bottom: 0.6rem;
+  color: #a33359;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.how-to-play h1 {
+  margin-bottom: 1.2rem;
+  color: #753682;
+  font-size: clamp(3rem, 8vw, 4.4rem);
+  line-height: 1.1;
+}
+
+.how-to-play__intro {
+  margin-bottom: 2rem;
+  font-size: 1.7rem;
+  line-height: 1.55;
+}
+
+.how-to-play__rules {
+  display: grid;
+  gap: 1.2rem;
+  margin: 0 0 2.8rem;
+  padding-left: 2.4rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.how-to-play__rules li {
+  padding-left: 0.4rem;
+}
+
+.how-to-play__rules li::marker {
+  color: #c7365f;
+  font-weight: 700;
+}
+
+.how-to-play__start {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  border: 0;
+  border-radius: 50rem;
+  color: #fff;
+  background: #c7365f;
+  font: inherit;
+  font-size: 1.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.how-to-play__start:hover {
+  background: #a92f53;
+}
+
+.how-to-play__start:active {
+  transform: translateY(2px);
+}
+
+.how-to-play__start:focus-visible,
+.btn--help:focus-visible {
+  outline: 3px solid #753682;
+  outline-offset: 3px;
 }
 
 @media (max-width: 900px) {
@@ -292,6 +389,12 @@ main {
     font-size: clamp(1.1rem, 3vw, 1.5rem);
     white-space: nowrap;
     transform: none;
+  }
+
+  .btn--help {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
   }
 
   .btn::first-letter {

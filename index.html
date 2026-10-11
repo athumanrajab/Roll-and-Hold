@@ -30,7 +30,34 @@
       <button class="btn btn--new">🔄 New game</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
+      <button
+        class="btn btn--help"
+        type="button"
+        aria-haspopup="dialog"
+        aria-controls="how-to-play"
+      >
+        ? Help
+      </button>
     </main>
+    <dialog class="how-to-play" id="how-to-play" aria-labelledby="how-to-play-title">
+      <div class="how-to-play__content">
+        <p class="how-to-play__eyebrow">A quick guide</p>
+        <h1 id="how-to-play-title">How to play</h1>
+        <p class="how-to-play__intro">
+          Be the first player to reach 100 points. Take turns rolling the die
+          and decide when it is safe to bank your points.
+        </p>
+        <ol class="how-to-play__rules">
+          <li><strong>Roll</strong> to add the die value to your current score. Roll again to build it up.</li>
+          <li><strong>Roll a 1</strong> and you lose all unbanked points for that turn. Your turn ends.</li>
+          <li><strong>Hold</strong> to add your current score to your total. Your turn then passes to the other player.</li>
+          <li><strong>Reach 100 points</strong> in your total score to win. Choose <strong>New Game</strong> to start over.</li>
+        </ol>
+        <button class="how-to-play__start" type="button" autofocus>
+          Let's play
+        </button>
+      </div>
+    </dialog>
     <script src="script.js"></script>
   </body>
 </html>

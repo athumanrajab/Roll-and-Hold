@@ -14,6 +14,7 @@ Roll & Hold is a two-player dice game built with HTML, CSS, and vanilla JavaScri
 * New game functionality
 * Interactive game interface
 * Responsive design
+* First-visit instructions with a help button to reopen them
 
 ## Project Structure
 
@@ -48,6 +49,9 @@ http://127.0.0.1:8080
 ```
 
 ## How to Play
+
+The game displays a short guide the first time it is opened in a browser. Use
+the **Help** button to view the instructions again.
 
 1. Player 1 starts the game.
 2. Click **Roll Dice** to roll the die.
